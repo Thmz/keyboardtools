@@ -29,6 +29,7 @@ namespace KeyPopups
             get { return true; }
         }
 
+        /* Rounded corners */
         private const int WS_EX_TOPMOST = 0x00000008;
         protected override CreateParams CreateParams
         {
@@ -40,138 +41,101 @@ namespace KeyPopups
             }
         }
 
-        public Notif()
+        public Notif(string text)
         {
-          //  this.Visible = false;
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
-
-           // MessageBox.Show(Screen.PrimaryScreen.WorkingArea.Width.ToString());
-
-          //  int x = Convert.ToInt32(Math.Round((Screen.PrimaryScreen.WorkingArea.Width - 100)*0.5));
-           // int y = (Screen.PrimaryScreen.WorkingArea.Height) * 0.33;
-            this.Location = new Point(900, 700);
-          //  this.Opacity = 0;
-           // FadeIn(this, 80);
+            this.set(text);
+            Show();
         }
-
-
-
-
-
-        GlobalKeyboardHook gHook;
-        System.Windows.Forms.Timer t;
-
+           
         private void Notif_Load(object sender, EventArgs e)
         {
-           
-            gHook = new GlobalKeyboardHook(); // Create a new GlobalKeyboardHook
-            // Declare a KeyDown Event
-            gHook.KeyDown += new KeyEventHandler(gHook_KeyDown);
-            // Add the keys you want to hook to the HookedKeys list
-            foreach (Keys key in Enum.GetValues(typeof(Keys)))
-                gHook.HookedKeys.Add(key);
-            gHook.hook();
-          //  Hide();
-           // this.Visible = false;
+            int x = Convert.ToInt32(Math.Round((Screen.PrimaryScreen.WorkingArea.Width - this.Width) * 0.5));
+            int y = Convert.ToInt32((Screen.PrimaryScreen.WorkingArea.Height) * 0.66);
+            this.Location = new Point(x, y);   
+            Opacity = 0.1;      //first the opacity is 0
+            Show();
+
+            fadeTimer = new Timer();
+            fadeTimer.Interval = 10;  //we'll increase the opacity every 10ms
+            fadeTimer.Tick += new EventHandler(fadeIn);  //this calls the function that changes opacity 
+            fadeTimer.Start();
+        }
+
+        void fadeIn(object sender, EventArgs e)
+        {
+            if (Opacity >= 0.7)
+                fadeTimer.Stop();   //this stops the timer if the form is completely displayed
+            else
+                Opacity += 0.2;
+        }
+
+        /* Fadeout anim */
+        Timer fadeTimer;
+        private void main_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;    //cancel the event so the form won't be closed
+
+            fadeTimer = new Timer();
+            fadeTimer.Interval = 20;
+            fadeTimer.Tick += new EventHandler(fadeOut);  //this calls the fade out function
+            fadeTimer.Start();
+
+            if (Opacity == 0)  //if the form is completly transparent
+                e.Cancel = false;   //resume the event - the program can be closed
+        }
+
+        void fadeOut(object sender, EventArgs e)
+        {
+            if (Opacity <= 0)     //check if opacity is 0
+            {
+                fadeTimer.Stop();    //if it is, we stop the timer
+                Close();   //and we try to close the form
+            }
+            else
+                Opacity -= 0.20;
         }
 
 
-        // Handle the KeyDown Event
-        public void gHook_KeyDown(object sender, KeyEventArgs e)
+
+
+        
+        System.Windows.Forms.Timer t;
+
+        public void set(string text)
         {
-            this.Visible = true;
-            Show();
-            if (isNeeded(e.KeyCode.ToString()))
-            {
-                changeText(e.KeyCode.ToString());
-            }
-            else
-            {
-                changeText("eeyo" + e.KeyCode.ToString());
-            }
-
-
-            if (t != null)
+            this.notifText.Text = text;
+            
+            if (t != null) // Timer was already running because of previous notif
             {
                 t.Stop();
             }
 
+            if (fadeTimer != null)
+            {
+                fadeTimer.Stop();
+            }
+
             t = new System.Windows.Forms.Timer();
-            t.Interval = KeyPopups.Properties.Settings.Default.Duration; // specify interval time as you want
+            t.Interval = KeyPopups.Properties.Settings.Default.Duration;
             t.Tick += new EventHandler(timer_Tick);
             t.Start();
         }
-
-        private void Notif_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            gHook.unhook();
-        }
-
-
-        public void changeText(string text)
-        {
-            this.notifText.Text = text;
-        }
-
+        
         private void timer_Tick(object sender, EventArgs e)
         {
             // this.frm.FadeOut(this.frm, 80);
-           Hide();
+            t.Stop();
+            this.Close();
+            Program.n = null;
         }
 
-        private Boolean isNeeded(String text)
-        {
 
-            if (KeyPopups.Properties.Settings.Default.Fkeys)
-            {
-                string[] a = { "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12" };
-                if (a.Contains(text))
-                    return true;
-            }
-
-            if (KeyPopups.Properties.Settings.Default.Home)
-            {
-                string[] a = { "Home", "End", "PageUp", "Next" };
-                if (a.Contains(text))
-                    return true;
-            }
-
-            if (KeyPopups.Properties.Settings.Default.Ins)
-            {
-                string[] a = { "Insert", "Del" };
-                if (a.Contains(text))
-                    return true;
-            }
-
-            if (KeyPopups.Properties.Settings.Default.Caps)
-            {
-                if (text == "Capital")
-                    return true;
-            }
-
-            if (KeyPopups.Properties.Settings.Default.Caps)
-            {
-                if (text == "NumLock")
-                    return true;
-            }
-
-            if (KeyPopups.Properties.Settings.Default.Tab)
-            {
-                if (text == "Tab")
-                    return true;
-            }
-
-            if (KeyPopups.Properties.Settings.Default.Escape)
-            {
-                if (text == "Escape")
-                    return true;
-            }
-            return false;
-        }
-
+      
+        // Animation
         public async void FadeIn(Form o, int interval = 80) 
         {
             //Object is not fully invisible. Fade it in

@@ -38,6 +38,8 @@
             this.cbCaps = new System.Windows.Forms.CheckBox();
             this.cbNumLock = new System.Windows.Forms.CheckBox();
             this.cbEscape = new System.Windows.Forms.CheckBox();
+            this.lblDuration = new System.Windows.Forms.Label();
+            this.tbDuration = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -51,9 +53,9 @@
             this.cbFkeys.AutoSize = true;
             this.cbFkeys.Location = new System.Drawing.Point(12, 12);
             this.cbFkeys.Name = "cbFkeys";
-            this.cbFkeys.Size = new System.Drawing.Size(54, 17);
+            this.cbFkeys.Size = new System.Drawing.Size(57, 17);
             this.cbFkeys.TabIndex = 6;
-            this.cbFkeys.Text = "Fkeys";
+            this.cbFkeys.Text = "F-keys";
             this.cbFkeys.UseVisualStyleBackColor = true;
             this.cbFkeys.CheckedChanged += new System.EventHandler(this.cbFkeys_CheckedChanged);
             // 
@@ -123,11 +125,30 @@
             this.cbEscape.UseVisualStyleBackColor = true;
             this.cbEscape.CheckedChanged += new System.EventHandler(this.cbEscape_CheckedChanged);
             // 
+            // lblDuration
+            // 
+            this.lblDuration.AutoSize = true;
+            this.lblDuration.Location = new System.Drawing.Point(12, 189);
+            this.lblDuration.Name = "lblDuration";
+            this.lblDuration.Size = new System.Drawing.Size(101, 13);
+            this.lblDuration.TabIndex = 13;
+            this.lblDuration.Text = "Notification duration";
+            // 
+            // tbDuration
+            // 
+            this.tbDuration.Location = new System.Drawing.Point(15, 206);
+            this.tbDuration.Name = "tbDuration";
+            this.tbDuration.Size = new System.Drawing.Size(100, 20);
+            this.tbDuration.TabIndex = 14;
+            this.tbDuration.TextChanged += new System.EventHandler(this.tbDuration_TextChanged);
+            // 
             // KPsettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(178, 178);
+            this.ClientSize = new System.Drawing.Size(179, 243);
+            this.Controls.Add(this.tbDuration);
+            this.Controls.Add(this.lblDuration);
             this.Controls.Add(this.cbEscape);
             this.Controls.Add(this.cbNumLock);
             this.Controls.Add(this.cbCaps);
@@ -135,6 +156,7 @@
             this.Controls.Add(this.cbIns);
             this.Controls.Add(this.cbHome);
             this.Controls.Add(this.cbFkeys);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "KPsettings";
             this.Text = "KB Popups";
@@ -154,6 +176,8 @@
         private System.Windows.Forms.CheckBox cbCaps;
         private System.Windows.Forms.CheckBox cbNumLock;
         private System.Windows.Forms.CheckBox cbEscape;
+        private System.Windows.Forms.Label lblDuration;
+        private System.Windows.Forms.TextBox tbDuration;
     }
 }
 

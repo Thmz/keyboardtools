@@ -26,6 +26,7 @@ namespace KeyPopups
             cbEscape.Checked = KeyPopups.Properties.Settings.Default.Escape;
             cbNumLock.Checked = KeyPopups.Properties.Settings.Default.NumLock;
             cbTab.Checked = KeyPopups.Properties.Settings.Default.Tab;
+            tbDuration.Text = KeyPopups.Properties.Settings.Default.Duration.ToString();
         }
 
 
@@ -62,6 +63,34 @@ namespace KeyPopups
         private void cbEscape_CheckedChanged(object sender, EventArgs e)
         {
             KeyPopups.Properties.Settings.Default.Escape = cbEscape.Checked;
+        }
+
+        private void tbDuration_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(tbDuration.Text, out value))
+            {
+                KeyPopups.Properties.Settings.Default.Duration = value;
+            }
+            else
+            {
+                KeyPopups.Properties.Settings.Default.Duration = 700;
+            }
+        }
+
+        private void tbDuration_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
         }
 
     }

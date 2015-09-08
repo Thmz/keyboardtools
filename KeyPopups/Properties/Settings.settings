@@ -24,7 +24,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="Duration" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">1000</Value>
+      <Value Profile="(Default)">700</Value>
     </Setting>
   </Settings>
 </SettingsFile>
