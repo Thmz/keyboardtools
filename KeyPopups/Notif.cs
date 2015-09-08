@@ -28,24 +28,38 @@ namespace KeyPopups
         {
             get { return true; }
         }
+        
+        //private const int WS_EX_TOPMOST = 0x00000008;
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams createParams = base.CreateParams;
+        //        createParams.ExStyle |= WS_EX_TOPMOST;
+        //        return createParams;
+        //    }
+        //}
 
-        /* Rounded corners */
-        private const int WS_EX_TOPMOST = 0x00000008;
+        const int WS_EX_NOACTIVATE = 0x8000000;
         protected override CreateParams CreateParams
         {
             get
             {
-                CreateParams createParams = base.CreateParams;
-                createParams.ExStyle |= WS_EX_TOPMOST;
-                return createParams;
+                CreateParams ret = base.CreateParams;
+                ret.ExStyle |= WS_EX_NOACTIVATE;
+                return ret;
             }
         }
+
+        /* Rounded corners */
+        
 
         public Notif(string text)
         {
             InitializeComponent();
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
 
             this.set(text);
             Show();
