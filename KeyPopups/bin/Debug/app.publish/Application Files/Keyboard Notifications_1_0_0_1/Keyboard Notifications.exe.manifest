@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Keyboard Notifications.exe" version="1.0.0.1" publicKeyToken="34a660b1c821711d" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="KN.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Keyboard Notifications" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <commandLine file="Keyboard Notifications.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          UAC Manifest Options
+          If you want to change the Windows User Account Control level replace the 
+          requestedExecutionLevel node with one of the following.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         If you want to utilize File and Registry Virtualization for backward 
+         compatibility then delete the requestedExecutionLevel node.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Keyboard Notifications.exe" size="83456">
+      <assemblyIdentity name="Keyboard Notifications" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>47kfhh4+fNd05bR7POteydACuTYbVGUDar7a14BXv/o=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Keyboard Notifications.exe.config" size="1900">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>px65zcqYeXZOdMx+UlasK4SsabnjsB4T5Dmbof7eObw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="KN.ico" size="19518">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>6A7QHOQ7Ah8U28GZxLXp37zRoi1dM82BbOc8V9ZpuZM=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=THOMASLAPTOP\Thomas" issuerKeyHash="cc0a5392f0257b33f52f1887ebe4f1956dd54e35" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>tGrPMnBEWXMHvJYTBJw1Jczu3zuwFbm/RVpMWsjAhr0=</DigestValue></Reference></SignedInfo><SignatureValue>aiQW2VUqsrLDVP/fJhrC2GhP2ZMqvfrPLY77lNvkqwvBRfH4PAtv1N0hbShIY/t9aBmDkkqELfY+B74ZQTrP3J3bsnSAQ0CzLwHUkVHZsVE74HWm0QQmik00wyWHskgZZ0xguXOve/SXokpnJGV2DBsyyACpKIq4gmGHjllSpWQ=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>i+TUGzOE01axhvPOip9o/XRESOz1nG/36TVEhU/fv4Wmkx9FHRJkesTEHJqVjsoKCxWP1lXpm3kaiumF5ZA/rK0HnhQJ7w3EvTgd1lurOo/FgmFKwRm/Kk8auxsae9G2xxwL3PfWtpxMkizYRJQVsqMUeJjOEaw2DMz+Hujn/o8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="bd86c0c85a4c5a45bfb915b03bdfeecc25359c041396bc077359447032cf6ab4" Description="" Url=""><as:assemblyIdentity name="Keyboard Notifications.exe" version="1.0.0.1" publicKeyToken="34a660b1c821711d" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=THOMASLAPTOP\Thomas</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>+/AaQtsslW8tuEYyYYGyZ0GkR468t894kNwL9Sm73O4=</DigestValue></Reference></SignedInfo><SignatureValue>HvvvPfYtA+fM8x8QzJwOI2fuwrRs7dZqpUABhCZMRq510+oP9t48jDjTcmvCQalEw7dV6oQgX01pONU7KrU5bPmuo0ZJO3OztjZqWIQgvMNclsIHoIWW+yJyIk+khRrybCldHQOWbA+vwo5uyOuevaBt1H/chGNl9wMa1EMVd98=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>i+TUGzOE01axhvPOip9o/XRESOz1nG/36TVEhU/fv4Wmkx9FHRJkesTEHJqVjsoKCxWP1lXpm3kaiumF5ZA/rK0HnhQJ7w3EvTgd1lurOo/FgmFKwRm/Kk8auxsae9G2xxwL3PfWtpxMkizYRJQVsqMUeJjOEaw2DMz+Hujn/o8=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB5TCCAU6gAwIBAgIQPqM+9sEttI1IkTPCnChKVjANBgkqhkiG9w0BAQsFADAxMS8wLQYDVQQDHiYAVABIAE8ATQBBAFMATABBAFAAVABPAFAAXABUAGgAbwBtAGEAczAeFw0xNTA5MDgyMTM2MThaFw0xNjA5MDgwMzM2MThaMDExLzAtBgNVBAMeJgBUAEgATwBNAEEAUwBMAEEAUABUAE8AUABcAFQAaABvAG0AYQBzMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCL5NQbM4TTVrGG886Kn2j9dERI7PWcb/fpNUSFT9+/haaTH0UdEmR6xMQcmpWOygoLFY/WVembeRqK6YXlkD+srQeeFAnvDcS9OB3WW6s6j8WCYUrBGb8qTxq7Gxp70bbHHAvc99a2nEySLNhElBWyoxR4mM4RrDYMzP4e6Of+jwIDAQABMA0GCSqGSIb3DQEBCwUAA4GBAASnbgV1KfgeFG2+Y0IYuyPUPSWl3apogb9RnkKmP0Kg+JbpxPyeKM9aodFM+yaLT2vb9F9h+NAHXonx9uaQ8u5KjujhIOpOEDY8nWbsCiJQ4av9m9QlUtqnAtvNR31gQCLnUGjRHcLageow/avslt7Nge5atEimQ4bD7iaVVMDT</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>
