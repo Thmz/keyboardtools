@@ -20,7 +20,7 @@ namespace KeyPopups
         GlobalKeyboardHook gHook;
         Notif frm;
         System.Windows.Forms.Timer t;
-
+        // Test
         private void Form1_Load(object sender, EventArgs e)
         {
             gHook = new GlobalKeyboardHook(); // Create a new GlobalKeyboardHook
