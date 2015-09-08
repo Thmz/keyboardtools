@@ -41,7 +41,6 @@
             this.notifText.TabIndex = 0;
             this.notifText.Text = "F1";
             this.notifText.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.notifText.Click += new System.EventHandler(this.label1_Click);
             // 
             // Notif
             // 
@@ -54,7 +53,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(850, 800);
             this.Name = "Notif";
-            this.Opacity = 0.5D;
+            this.Opacity = 0.7D;
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Notif";

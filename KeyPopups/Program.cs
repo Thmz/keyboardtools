@@ -28,8 +28,9 @@ namespace KeyPopups
             });
                 icon.Visible = true;
 
+               // Application.Run();
+                Notif n = new Notif();
                 Application.Run();
-                icon.Visible = false;
             }
         }
        
