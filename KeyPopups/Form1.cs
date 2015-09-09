@@ -93,5 +93,44 @@ namespace KeyPopups
             }
         }
 
+<<<<<<< HEAD
+=======
+        private void tbVertPos_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(tbVertPos.Text, out value) && value <= 100 && value >= 0)
+            {
+                KeyboardNotifications.Properties.Settings.Default.yPercent = value;
+            }
+            else
+            {
+                KeyboardNotifications.Properties.Settings.Default.yPercent = 70;
+            }
+        }
+
+        private void tbVertPos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) &&
+                (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btSave_Click(object sender, EventArgs e)
+        {
+            KeyboardNotifications.Properties.Settings.Default.Save();
+        }
+
+
+
+
+>>>>>>> 133207b... Fixed settings save
     }
 }

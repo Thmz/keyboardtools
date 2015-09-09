@@ -40,6 +40,12 @@
             this.cbEscape = new System.Windows.Forms.CheckBox();
             this.lblDuration = new System.Windows.Forms.Label();
             this.tbDuration = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
+=======
+            this.lblVertPos = new System.Windows.Forms.Label();
+            this.tbVertPos = new System.Windows.Forms.TextBox();
+            this.btSave = new System.Windows.Forms.Button();
+>>>>>>> 133207b... Fixed settings save
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -142,11 +148,48 @@
             this.tbDuration.TabIndex = 14;
             this.tbDuration.TextChanged += new System.EventHandler(this.tbDuration_TextChanged);
             // 
+<<<<<<< HEAD
+=======
+            // lblVertPos
+            // 
+            this.lblVertPos.AutoSize = true;
+            this.lblVertPos.Location = new System.Drawing.Point(12, 238);
+            this.lblVertPos.Name = "lblVertPos";
+            this.lblVertPos.Size = new System.Drawing.Size(109, 13);
+            this.lblVertPos.TabIndex = 15;
+            this.lblVertPos.Text = "Vertical position (in %)";
+            // 
+            // tbVertPos
+            // 
+            this.tbVertPos.Location = new System.Drawing.Point(15, 254);
+            this.tbVertPos.Name = "tbVertPos";
+            this.tbVertPos.Size = new System.Drawing.Size(100, 20);
+            this.tbVertPos.TabIndex = 16;
+            this.tbVertPos.TextChanged += new System.EventHandler(this.tbVertPos_TextChanged);
+            // 
+            // btSave
+            // 
+            this.btSave.Location = new System.Drawing.Point(15, 289);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(75, 23);
+            this.btSave.TabIndex = 17;
+            this.btSave.Text = "Save";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.btSave_Click);
+            // 
+>>>>>>> 133207b... Fixed settings save
             // KPsettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(179, 243);
+=======
+            this.ClientSize = new System.Drawing.Size(181, 321);
+            this.Controls.Add(this.btSave);
+            this.Controls.Add(this.tbVertPos);
+            this.Controls.Add(this.lblVertPos);
+>>>>>>> 133207b... Fixed settings save
             this.Controls.Add(this.tbDuration);
             this.Controls.Add(this.lblDuration);
             this.Controls.Add(this.cbEscape);
@@ -178,6 +221,12 @@
         private System.Windows.Forms.CheckBox cbEscape;
         private System.Windows.Forms.Label lblDuration;
         private System.Windows.Forms.TextBox tbDuration;
+<<<<<<< HEAD
+=======
+        private System.Windows.Forms.Label lblVertPos;
+        private System.Windows.Forms.TextBox tbVertPos;
+        private System.Windows.Forms.Button btSave;
+>>>>>>> 133207b... Fixed settings save
     }
 }
 
