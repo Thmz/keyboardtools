@@ -50,6 +50,11 @@ namespace KeyPopups
 
         public static NotificationForm notificationForm = new NotificationForm();
 
+        public static void restartNotificationForm(){
+            Program.notificationForm.Close();
+            Program.notificationForm = new NotificationForm();
+        }
+
         // Handle the KeyDown Event
         public static void gHook_KeyDown(object sender, KeyEventArgs e)
         {
@@ -58,7 +63,7 @@ namespace KeyPopups
             if (isNeeded(text))
             {
                 text = changeText(text);
-                notificationForm.ShowNotification(text);
+                Program.notificationForm.ShowNotification(text);
             }
         }
 
@@ -107,7 +112,7 @@ namespace KeyPopups
             if (KeyPopups.Properties.Settings.Default.Ins)
             {
                 keys.Add("Insert");
-                keys.Add("Del");
+                keys.Add("Delete");
             }
 
             if (KeyPopups.Properties.Settings.Default.Caps)
@@ -115,7 +120,11 @@ namespace KeyPopups
                 keys.Add("Capital");
             }
 
+<<<<<<< HEAD
             if (KeyPopups.Properties.Settings.Default.Caps)
+=======
+            if (KeyboardNotifications.Properties.Settings.Default.NumLock)
+>>>>>>> 267148b... Fixed opacity and cleaned code
             {
                 keys.Add("NumLock");
             }

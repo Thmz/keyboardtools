@@ -32,6 +32,7 @@
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <dsig:DigestValue>rWiaeTt8FQlRBH92rNvzzsIeY2o38oJIAzoA0ELHwr4=</dsig:DigestValue>
 =======
         <dsig:DigestValue>1jsLKpuDdaBBSybmSejM90UqX72v3AjNm+ELMYluvx0=</dsig:DigestValue>
@@ -39,6 +40,9 @@
 =======
         <dsig:DigestValue>7129Yq/gx55xcqqYJWIgW3sABvIi2XBNKGIvv1SBUHc=</dsig:DigestValue>
 >>>>>>> 45afed3... Replaced
+=======
+        <dsig:DigestValue>rWiaeTt8FQlRBH92rNvzzsIeY2o38oJIAzoA0ELHwr4=</dsig:DigestValue>
+>>>>>>> 267148b... Fixed opacity and cleaned code
       </hash>
     </dependentAssembly>
   </dependency>

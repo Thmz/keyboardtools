@@ -43,8 +43,8 @@
             this.lblVertPos = new System.Windows.Forms.Label();
             this.tbVertPos = new System.Windows.Forms.TextBox();
             this.btSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.opacityTextBox = new System.Windows.Forms.TextBox();
+            this.lblOpacity = new System.Windows.Forms.Label();
+            this.tbOpacity = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // notifyIcon
@@ -166,7 +166,7 @@
             // 
             // btSave
             // 
-            this.btSave.Location = new System.Drawing.Point(-1, 355);
+            this.btSave.Location = new System.Drawing.Point(16, 341);
             this.btSave.Name = "btSave";
             this.btSave.Size = new System.Drawing.Size(75, 23);
             this.btSave.TabIndex = 17;
@@ -174,29 +174,31 @@
             this.btSave.UseVisualStyleBackColor = true;
             this.btSave.Click += new System.EventHandler(this.btSave_Click);
             // 
-            // label1
+            // lblOpacity
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 289);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 13);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Opacity (in %)";
+            this.lblOpacity.AutoSize = true;
+            this.lblOpacity.Location = new System.Drawing.Point(13, 289);
+            this.lblOpacity.Name = "lblOpacity";
+            this.lblOpacity.Size = new System.Drawing.Size(71, 13);
+            this.lblOpacity.TabIndex = 18;
+            this.lblOpacity.Text = "Opacity (in %)";
+            this.lblOpacity.Click += new System.EventHandler(this.label1_Click);
             // 
-            // opacityTextBox
+            // tbOpacity
             // 
-            this.opacityTextBox.Location = new System.Drawing.Point(16, 305);
-            this.opacityTextBox.Name = "opacityTextBox";
-            this.opacityTextBox.Size = new System.Drawing.Size(100, 20);
-            this.opacityTextBox.TabIndex = 19;
+            this.tbOpacity.Location = new System.Drawing.Point(16, 305);
+            this.tbOpacity.Name = "tbOpacity";
+            this.tbOpacity.Size = new System.Drawing.Size(100, 20);
+            this.tbOpacity.TabIndex = 19;
+            this.tbOpacity.TextChanged += new System.EventHandler(this.opacityTextBox_TextChanged);
             // 
             // SettingsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(196, 443);
-            this.Controls.Add(this.opacityTextBox);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(196, 374);
+            this.Controls.Add(this.tbOpacity);
+            this.Controls.Add(this.lblOpacity);
             this.Controls.Add(this.btSave);
             this.Controls.Add(this.tbVertPos);
             this.Controls.Add(this.lblVertPos);
@@ -212,7 +214,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SettingsForm";
-            this.Text = "KB Popups";
+            this.Text = "KeyPopups";
             this.Load += new System.EventHandler(this.SettingsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -234,8 +236,8 @@
         private System.Windows.Forms.Label lblVertPos;
         private System.Windows.Forms.TextBox tbVertPos;
         private System.Windows.Forms.Button btSave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox opacityTextBox;
+        private System.Windows.Forms.Label lblOpacity;
+        private System.Windows.Forms.TextBox tbOpacity;
     }
 }
 

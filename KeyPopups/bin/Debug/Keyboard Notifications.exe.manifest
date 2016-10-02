@@ -53,6 +53,7 @@
   <dependency>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Keyboard Notifications.exe" size="82432">
 =======
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Keyboard Notifications.exe" size="83456">
@@ -60,12 +61,16 @@
 =======
     <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Keyboard Notifications.exe" size="81920">
 >>>>>>> 45afed3... Replaced
+=======
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Keyboard Notifications.exe" size="82432">
+>>>>>>> 267148b... Fixed opacity and cleaned code
       <assemblyIdentity name="Keyboard Notifications" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
         <dsig:DigestValue>zFC8zszim7EzuMse6chao+sTPHwbq+ZPg0HTOu6t4oY=</dsig:DigestValue>
@@ -82,6 +87,9 @@
 >>>>>>> 133207b... Fixed settings save
 =======
         <dsig:DigestValue>tGU2fXAOtGuzom09e0dMbZ9nHWNWNUDqWAC3OggeC4o=</dsig:DigestValue>
+=======
+        <dsig:DigestValue>zFC8zszim7EzuMse6chao+sTPHwbq+ZPg0HTOu6t4oY=</dsig:DigestValue>
+>>>>>>> 267148b... Fixed opacity and cleaned code
       </hash>
     </dependentAssembly>
   </dependency>
@@ -94,6 +102,7 @@
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
       <dsig:DigestValue>Tb7FPbnahufFhr5is+uNcwX8Hi2gKmiAKU+Hcxa1Lew=</dsig:DigestValue>
 =======
       <dsig:DigestValue>px65zcqYeXZOdMx+UlasK4SsabnjsB4T5Dmbof7eObw=</dsig:DigestValue>
@@ -101,6 +110,9 @@
 =======
       <dsig:DigestValue>I/nXR6uIp+xBLFPboo7mfoYHDCaQv/mwdezs+/J8UuU=</dsig:DigestValue>
 >>>>>>> 45afed3... Replaced
+=======
+      <dsig:DigestValue>Tb7FPbnahufFhr5is+uNcwX8Hi2gKmiAKU+Hcxa1Lew=</dsig:DigestValue>
+>>>>>>> 267148b... Fixed opacity and cleaned code
     </hash>
   </file>
   <file name="KN.ico" size="19518">

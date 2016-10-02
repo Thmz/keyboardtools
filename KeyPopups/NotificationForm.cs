@@ -58,6 +58,8 @@ namespace KeyboardNotifications
         }
 
         /* Fadeout anim */
+
+        // Not used at the moment
         Timer fadeTimer;
         private void NotificationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -71,7 +73,6 @@ namespace KeyboardNotifications
             if (Opacity <= 0)  //if the form is completly transparent
                 e.Cancel = false;   //resume the event - the program can be closed
         }
-
         void FadeOut(object sender, EventArgs e)
         {
             if (Opacity <= 0)     //check if opacity is 0

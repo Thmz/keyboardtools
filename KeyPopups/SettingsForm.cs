@@ -21,6 +21,7 @@ namespace KeyboardNotifications
             cbTab.Checked = KeyboardNotifications.Properties.Settings.Default.Tab;
             tbDuration.Text = KeyboardNotifications.Properties.Settings.Default.Duration.ToString();
             tbVertPos.Text = KeyboardNotifications.Properties.Settings.Default.yPercent.ToString();
+            tbOpacity.Text = KeyboardNotifications.Properties.Settings.Default.Opacity.ToString();
         }
 
 
@@ -126,6 +127,25 @@ namespace KeyboardNotifications
         private void btSave_Click(object sender, EventArgs e)
         {
             KeyboardNotifications.Properties.Settings.Default.Save();
+            Program.restartNotificationForm();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void opacityTextBox_TextChanged(object sender, EventArgs e)
+        {
+            int value;
+            if (int.TryParse(tbOpacity.Text, out value) && value <= 100 && value >= 0)
+            {
+                KeyboardNotifications.Properties.Settings.Default.Opacity = value;
+            }
+            else
+            {
+                KeyboardNotifications.Properties.Settings.Default.Opacity = 60;
+            }
         }
 
 
