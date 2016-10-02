@@ -1,10 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xrml="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
 <<<<<<< HEAD
+<<<<<<< HEAD
   <assemblyIdentity name="Keyboard Notifications.application" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
 =======
   <assemblyIdentity name="Keyboard Notifications.application" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
 >>>>>>> 133207b... Fixed settings save
+=======
+  <assemblyIdentity name="Keyboard Notifications.application" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" xmlns="urn:schemas-microsoft-com:asm.v1" />
+>>>>>>> 45afed3... Replaced
   <description asmv2:publisher="Keyboard Notifications" asmv2:product="Keyboard Notifications" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <compatibleFrameworks xmlns="urn:schemas-microsoft-com:clickonce.v2">
@@ -13,20 +17,28 @@
   <dependency>
     <dependentAssembly dependencyType="install" codebase="Keyboard Notifications.exe.manifest" size="4012">
 <<<<<<< HEAD
+<<<<<<< HEAD
       <assemblyIdentity name="Keyboard Notifications.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
 =======
       <assemblyIdentity name="Keyboard Notifications.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
 >>>>>>> 133207b... Fixed settings save
+=======
+      <assemblyIdentity name="Keyboard Notifications.exe" version="1.0.0.2" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+>>>>>>> 45afed3... Replaced
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
 <<<<<<< HEAD
+<<<<<<< HEAD
         <dsig:DigestValue>rWiaeTt8FQlRBH92rNvzzsIeY2o38oJIAzoA0ELHwr4=</dsig:DigestValue>
 =======
         <dsig:DigestValue>pun/7RKVSDJw3BatErFeac5po9jYD8v5IzIv/ntFOlo=</dsig:DigestValue>
 >>>>>>> 133207b... Fixed settings save
+=======
+        <dsig:DigestValue>7129Yq/gx55xcqqYJWIgW3sABvIi2XBNKGIvv1SBUHc=</dsig:DigestValue>
+>>>>>>> 45afed3... Replaced
       </hash>
     </dependentAssembly>
   </dependency>

@@ -10,6 +10,7 @@ namespace KeyPopups
     {
 
         static GlobalKeyboardHook gHook;
+        static List<string> keys = new List<string>();
 
         /// <summary>
         /// The main entry point for the application.
@@ -20,14 +21,14 @@ namespace KeyPopups
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            
+            //Application.SetCompatibleTextRenderingDefault(false);
+
             using (NotifyIcon icon = new NotifyIcon())
             {
-                
+
                 icon.Icon = System.Drawing.Icon.ExtractAssociatedIcon(Application.ExecutablePath);
                 icon.ContextMenu = new ContextMenu(new MenuItem[] {
-                    new MenuItem("Options", (s, e) => {new KPsettings().Show();}),
+                    new MenuItem("Options", (s, e) => {new SettingsForm().Show(); }),
                     new MenuItem("Exit", (s, e) => { Application.Exit(); }),
                  });
 
@@ -41,81 +42,104 @@ namespace KeyPopups
                 gHook.hook();
                 icon.Visible = true;
 
-               // Application.Run();
-                //Notif n = new Notif();
+                Program.BuildKeyArray();
+
                 Application.Run();
             }
         }
 
-        public static Notif n;
+        public static NotificationForm notificationForm = new NotificationForm();
 
         // Handle the KeyDown Event
         public static void gHook_KeyDown(object sender, KeyEventArgs e)
         {
 
             string text = e.KeyCode.ToString();
-            if (!isNeeded(text))
-                return;
-
-            if (n == null)
+            if (isNeeded(text))
             {
-                n = new Notif(text);
-            }
-            else
-            {
-                n.set(text);
+                text = changeText(text);
+                notificationForm.ShowNotification(text);
             }
         }
 
-        private static Boolean isNeeded(String text)
+        /// <summary>
+        /// Change some keycode text to more common text which will be shown
+        /// </summary>
+        /// <param name="text">keycode text as string</param>
+        /// <returns>string</returns>
+        public static string changeText(string text)
         {
+            switch (text)
+            {
+                case "Capital":
+                    return "CapsLock";
+                case "Next":
+                    return "PageDown";
+                default:
+                    return text;
+            }
+        }
+
+        /// <summary>
+        /// Builds an array with stings of the keycodes that require a notificaiton
+        /// </summary>
+        public static void BuildKeyArray()
+        {
+            keys = new List<string>();
 
             if (KeyPopups.Properties.Settings.Default.Fkeys)
             {
-                string[] a = { "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12" };
-                if (a.Contains(text))
-                    return true;
+                var temp = new string[] { "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12" };
+                keys.InsertRange(keys.Count, temp);
             }
 
+<<<<<<< HEAD
             if (KeyPopups.Properties.Settings.Default.Home)
+=======
+
+            if (KeyboardNotifications.Properties.Settings.Default.Home)
+>>>>>>> 45afed3... Replaced
             {
-                string[] a = { "Home", "End", "PageUp", "Next" };
-                if (a.Contains(text))
-                    return true;
+                var temp = new[] { "Home", "End", "PageUp", "Next" };
+                keys.InsertRange(keys.Count, temp);
             }
 
             if (KeyPopups.Properties.Settings.Default.Ins)
             {
-                string[] a = { "Insert", "Del" };
-                if (a.Contains(text))
-                    return true;
+                keys.Add("Insert");
+                keys.Add("Del");
             }
 
             if (KeyPopups.Properties.Settings.Default.Caps)
             {
-                if (text == "Capital")
-                    return true;
+                keys.Add("Capital");
             }
 
             if (KeyPopups.Properties.Settings.Default.Caps)
             {
-                if (text == "NumLock")
-                    return true;
+                keys.Add("NumLock");
             }
 
             if (KeyPopups.Properties.Settings.Default.Tab)
             {
-                if (text == "Tab")
-                    return true;
+                keys.Add("Tab");
             }
 
             if (KeyPopups.Properties.Settings.Default.Escape)
             {
-                if (text == "Escape")
-                    return true;
+                keys.Add("Escape");
             }
-            return false;
+
         }
 
+        /// <summary>
+        /// Returns true if the given string text is an element of the keys array. 
+        /// </summary>
+        /// <param name="text">a string to search for</param>
+        /// <returns>true if text is in de keys array</returns>
+        private static Boolean isNeeded(String text)
+        {
+            return keys.Contains(text);
+        }
     }
 }
