@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace KeyPopups
+namespace KeyboardNotifications
 {
     static class Program
     {
@@ -92,49 +92,40 @@ namespace KeyPopups
         {
             keys = new List<string>();
 
-            if (KeyPopups.Properties.Settings.Default.Fkeys)
+            if (KeyboardNotifications.Properties.Settings.Default.Fkeys)
             {
                 var temp = new string[] { "F1", "F2", "F3", "F4", "F5", "F6", "F7", "F8", "F9", "F10", "F11", "F12" };
                 keys.InsertRange(keys.Count, temp);
             }
 
-<<<<<<< HEAD
-            if (KeyPopups.Properties.Settings.Default.Home)
-=======
-
             if (KeyboardNotifications.Properties.Settings.Default.Home)
->>>>>>> 45afed3... Replaced
             {
                 var temp = new[] { "Home", "End", "PageUp", "Next" };
                 keys.InsertRange(keys.Count, temp);
             }
 
-            if (KeyPopups.Properties.Settings.Default.Ins)
+            if (KeyboardNotifications.Properties.Settings.Default.Ins)
             {
                 keys.Add("Insert");
                 keys.Add("Delete");
             }
 
-            if (KeyPopups.Properties.Settings.Default.Caps)
+            if (KeyboardNotifications.Properties.Settings.Default.Caps)
             {
                 keys.Add("Capital");
             }
 
-<<<<<<< HEAD
-            if (KeyPopups.Properties.Settings.Default.Caps)
-=======
-            if (KeyboardNotifications.Properties.Settings.Default.NumLock)
->>>>>>> 267148b... Fixed opacity and cleaned code
+            if (KeyboardNotifications.Properties.Settings.Default.Caps)
             {
                 keys.Add("NumLock");
             }
 
-            if (KeyPopups.Properties.Settings.Default.Tab)
+            if (KeyboardNotifications.Properties.Settings.Default.Tab)
             {
                 keys.Add("Tab");
             }
 
-            if (KeyPopups.Properties.Settings.Default.Escape)
+            if (KeyboardNotifications.Properties.Settings.Default.Escape)
             {
                 keys.Add("Escape");
             }

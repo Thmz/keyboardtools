@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace KeyPopups.Properties {
+namespace KeyboardNotifications.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
@@ -118,8 +118,6 @@ namespace KeyPopups.Properties {
                 this["Duration"] = value;
             }
         }
-<<<<<<< HEAD
-=======
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -135,7 +133,7 @@ namespace KeyPopups.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("60")]
+        [global::System.Configuration.DefaultSettingValueAttribute("65")]
         public int Opacity {
             get {
                 return ((int)(this["Opacity"]));
@@ -144,6 +142,5 @@ namespace KeyPopups.Properties {
                 this["Opacity"] = value;
             }
         }
->>>>>>> 45afed3... Replaced
     }
 }

@@ -18,7 +18,7 @@ namespace KeyboardNotifications
             Opacity = 0;
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
-            maxOpacity = Properties.Settings.Default.Opacity * 0.01;
+            maxOpacity = KeyboardNotifications.Properties.Settings.Default.Opacity * 0.01;
         }
 
         private void NotificationForm_Load(object sender, EventArgs e)
